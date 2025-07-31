@@ -1,0 +1,56 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1.What is the best method to determine the effect of sliding speed on wear?",
+      "answers": {
+        "a": "Keep none of other parameters (like load etc.) constant, while changing sliding speed ",
+        "b": "Keep only one of other parameters constant, while changing sliding speed ",
+        "c": "All other parameters kept constant.",
+        "d": "All other parameters kept constant."
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2.The temperature of wear usually",
+      "answers": {
+        "a": "Increases with increasing sliding speed",
+        "b": "Decreases with increasing sliding speed.",
+        "c": "Remains constant with increasing sliding speed.",
+        "d": "None of the options"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. On increasing sliding speeds, the wear rate",
+      "answers": {
+        "a": "Indefinitely increases. ",
+        "b": "Indefinitely decreases.",
+        "c": "is dependent on temperature and contact surface area.",
+        "d": "does not change."
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

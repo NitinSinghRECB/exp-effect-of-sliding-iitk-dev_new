@@ -1,0 +1,56 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1.If the sliding speed is increased, what is the general observation?",
+      "answers": {
+        "a": "The wear rate decreases",
+        "b": "No change in wear rate is observed.",
+        "c": "The wear rate increases.",
+        "d": "None of the options "
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2.The change in wear characteristics due to change in sliding speed will be observed by:",
+      "answers": {
+        "a": "weight loss/ volume loss method",
+        "b": "Using measuring scale",
+        "c": "Using thermocouple",
+        "d": "None of the options"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. The measurement of temperature is also important while changing sliding speed:",
+      "answers": {
+        "a": "Rise in temperature can alter wear rate.",
+        "b": "Noting temperature is not important",
+        "c": "The temperature of sample does not change with change in wear sample",
+        "d": "None of the options"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
