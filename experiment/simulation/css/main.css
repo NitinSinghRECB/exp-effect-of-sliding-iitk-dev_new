@@ -253,24 +253,37 @@ display: none;
 /* material image show */
 
 /* Hide the result container and material photos by default */
-#resultContainer {
-display: none;
-width: 600px;
-height: 600px;
-margin-left: 30px;
-/* margin-right: 400px; */
-margin-bottom:20px ;
-align-self: center;
+/* #resultContainer1,
+#resultContainer2 {
+  display: none;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: fit-content;
+  text-align: center;
 }
 
-#material1Photo,
-#material2Photo {
-display: none;
-width: 600px;
-height: 600px;
-align-items: center;
-border: 5px solid rgba(0, 0, 0, 0.974); 
+.material1Photo,
+.material2Photo {
+  display: none;
+  border: 5px solid rgba(0, 0, 0, 0.974);
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
 }
+
+.nav-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+} */
+
 
 
 /* Help! video */
@@ -300,6 +313,70 @@ margin-right: 400px;
 margin-top: 70px;
 } */
 
+
+/* Center the entire result box */
+#resultContainer {
+  display: none;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  border: 5px solid rgba(0, 0, 0, 0.974);
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Image wrapper */
+#imageWrapper {
+  position: relative;
+}
+
+/* The image itself */
+.materialPhoto {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 3px solid black;
+  border-radius: 6px;
+}
+
+/* Label at top of image */
+#imageLabel {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description below the image */
+#imageDescription {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+  min-height: 60px;
+  white-space: pre-line;  /* important to preserve line breaks */
+}
+
+
+/* Nav buttons */
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+
 #moveButton8 ,#moveButton4, #out {
 display: none; /* Initially hide the button */
 }
@@ -319,9 +396,9 @@ display: flex;
 }
 
 .img1{
-  height: 190px;
+  height: 200px;
   border-radius: 25px;
-  width: 400px;
+  width: 390px;
   margin-left: 10px;
   /* margin-top: 5px; */
   border: 3px solid black;
@@ -357,14 +434,15 @@ height: 190px;
 }   */
 
 @media only screen and (max-width: 1700px){
-  #material1Photo,
+#material1Photo,
 #material2Photo {
   display: none;
-  width: 580px;
-  height: 500px;
-  align-items: center;
-  border: 5px solid rgba(0, 0, 0, 0.974); 
+  max-width: 100%;
+  height: auto;
+  border: 5px solid rgba(0, 0, 0, 0.974);
+  object-fit: contain;
 }
+
 }
 
 
@@ -372,3 +450,91 @@ height: 190px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.result-box {
+  position: relative;
+  width: fit-content;
+  padding: 10px;
+  border: 2px solid #444;
+  background: #fff;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.result-box img.main-image {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.arrow-img {
+  width: 150px;
+}
+
+.arrow-text {
+  font-weight: bold;
+  color: #000;
+  margin-top: 4px;
+}
+
+.hidden {
+  display: none;
+} */
+.result-box {
+  position: relative;
+  width: fit-content;
+  padding: 10px;
+  border: 2px solid #444;
+  background: #fff;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.result-box img.main-image {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.arrow-img {
+  width: 150px;
+}
+
+.arrow-text {
+  font-weight: bold;
+  color: #000;
+  margin-top: 4px;
+}
+
+.hidden {
+  display: none;
+}

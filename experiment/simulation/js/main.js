@@ -409,3 +409,181 @@ moveButton6.addEventListener('click', function () {
 
 
 
+
+
+
+
+
+// document.getElementById("moveButton8").addEventListener("click", function () {
+//   document.getElementById("resultBox").classList.remove("hidden");
+// });
+
+
+// document.getElementById("moveButton8").addEventListener("click", function () {
+//   document.getElementById("resultBox").classList.remove("hidden");
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // MATERIAL 1
+// const images1 = document.querySelectorAll(".material1Photo");
+// let currentIndex1 = 0;
+
+// function showImage1(index) {
+//   images1.forEach((img, i) => {
+//     img.style.display = (i === index) ? "block" : "none";
+//   });
+// }
+
+// document.getElementById("moveButton8").addEventListener("click", () => {
+//   document.getElementById("resultContainer1").style.display = "block";
+//   currentIndex1 = 0;
+//   showImage1(currentIndex1);
+// });
+
+// document.getElementById("nextBtn1").addEventListener("click", () => {
+//   currentIndex1 = (currentIndex1 + 1) % images1.length;
+//   showImage1(currentIndex1);
+// });
+
+// document.getElementById("prevBtn1").addEventListener("click", () => {
+//   currentIndex1 = (currentIndex1 - 1 + images1.length) % images1.length;
+//   showImage1(currentIndex1);
+// });
+
+
+// // MATERIAL 2
+// const images2 = document.querySelectorAll(".material2Photo");
+// let currentIndex2 = 0;
+
+// function showImage2(index) {
+//   images2.forEach((img, i) => {
+//     img.style.display = (i === index) ? "block" : "none";
+//   });
+// }
+
+// // Example trigger to show Material 2 result:
+// document.getElementById("showMaterial2Btn").addEventListener("click", () => {
+//   document.getElementById("resultContainer2").style.display = "block";
+//   currentIndex2 = 0;
+//   showImage2(currentIndex2);
+// });
+
+// document.getElementById("nextBtn2").addEventListener("click", () => {
+//   currentIndex2 = (currentIndex2 + 1) % images2.length;
+//   showImage2(currentIndex2);
+// });
+
+// document.getElementById("prevBtn2").addEventListener("click", () => {
+//   currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
+//   showImage2(currentIndex2);
+// });
+
+
+
+
+
+// let selectedRPM = null;
+// let currentindex = 0;
+// let currentImages = [];
+
+// function selectRPM(rpm) {
+//   selectedRPM = rpm;
+//   document.getElementById("moveButton8").classList.remove("hidden");
+// }
+
+// function showResult() {
+//   if (!selectedRPM) return;
+
+//   // Get all images for selected RPM
+//   currentImages = document.querySelectorAll(`.materialPhoto.rpm${selectedRPM}`);
+  
+//   // Hide all images
+//   document.querySelectorAll('.materialPhoto').forEach(img => img.style.display = "none");
+
+//   // Show container and first image
+//   document.getElementById("resultContainer").style.display = "block";
+//   currentindex = 0;
+//   showImage(currentindex);
+// }
+
+// function showImage(index) {
+//   currentImages.forEach((img, i) => {
+//     img.style.display = (i === index) ? "block" : "none";
+//   });
+// }
+
+// document.getElementById("nextBtn").addEventListener("click", () => {
+//   currentindex = (currentindex + 1) % currentImages.length;
+//   showImage(currentindex);
+// });
+
+// document.getElementById("prevBtn").addEventListener("click", () => {
+//   currentindex = (currentindex - 1 + currentImages.length) % currentImages.length;
+//   showImage(currentindex);
+// });
+
+
+
+
+
+let selectedRPM = null;
+let currentindex = 0;
+let currentImages = [];
+
+function selectRPM(rpm) {
+  selectedRPM = rpm;
+  document.getElementById("moveButton8").classList.remove("hidden");
+}
+
+function showResult() {
+  if (!selectedRPM) return;
+
+  // Hide all images
+  document.querySelectorAll('.materialPhoto').forEach(img => img.style.display = "none");
+
+  // Filter relevant images
+  currentImages = document.querySelectorAll(`.materialPhoto.rpm${selectedRPM}`);
+
+  // Show result box
+  document.getElementById("resultContainer").style.display = "block";
+  currentindex = 0;
+  showImage(currentindex);
+}
+
+function showImage(index) {
+  currentImages.forEach((img, i) => {
+    img.style.display = (i === index) ? "block" : "none";
+  });
+
+  const currentImg = currentImages[index];
+  document.getElementById("imageLabel").innerHTML = `<b>${currentImg.dataset.label}</b>`;
+  document.getElementById("imageDescription").innerText = currentImg.dataset.desc;
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentindex = (currentindex + 1) % currentImages.length;
+  showImage(currentindex);
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentindex = (currentindex - 1 + currentImages.length) % currentImages.length;
+  showImage(currentindex);
+});

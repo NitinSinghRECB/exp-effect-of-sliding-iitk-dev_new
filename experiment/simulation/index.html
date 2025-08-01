@@ -79,10 +79,13 @@
 	  <button class="button button1 hidden  B" id="moveButton6" >Input Load (10N)</button>
 	  <div id="buttonContainer" class="hidden">
 	  <h3 class="m " >Start Rotation:</h3>
-	  <button class="button button1  B " id="moveButton7" style="cursor: pointer;" onclick="toggleButtons()">25 RPM</button>
-	  <button class="button button1  B " id="moveButton9" style="cursor: pointer;" onclick="toggleButtons()">50 RPM</button>
+	  <button class="button button1 B" id="moveButton7" onclick="selectRPM('25')">25 RPM</button>
+      <button class="button button1 B" id="moveButton9" onclick="selectRPM('50')">50 RPM</button>
 	</div>
-	  <button class="button button1 hidden  B" id="moveButton8" >Show Result</button>
+	  <button class="button button1 hidden B" id="moveButton8" onclick="showResult()">Show Result</button>
+
+		
+
 	   
 				</div>	  
 			</section>
@@ -298,7 +301,7 @@
 		</g>
 		<g>
 			<g>
-				<image id="targetObject" id="targetObject2" id="targetObject6" id="rotating base" data-name="rotating base" class="target" style="overflow:visible;" width="257" height="129" xlink:href="824E538F.png"  transform="matrix(1 0 0 1 1123 772)">
+				<image id="targetObject" id="targetObject2" id="targetObject6" id="rotating base" data-name="Rotating Base" class="target" style="overflow:visible;" width="257" height="129" xlink:href="824E538F.png"  transform="matrix(1 0 0 1 1123 772)">
 				</image>
 			</g>
 		</g>
@@ -3152,7 +3155,7 @@
 <g>
 	<g  >
 		
-			<image id="objectToMove"   class="discImage" class="moveable" x="1600" y="1000" id="material 1" data-name="material " style="overflow:visible;" width="512" height="271" xlink:href="..\simulation\disc\1-1.png"  ></image>
+			<image id="objectToMove"   class="discImage" class="moveable" x="1600" y="1000" id="material 1" data-name="Stainless Steel material " style="overflow:visible;" width="512" height="271" xlink:href="..\simulation\disc\1-1.png"  ></image>
 
 	</g>
 </g>
@@ -3268,10 +3271,20 @@
 <path class="st1" d="M1344,1153"/>
 <g>
 	<g>
-		<image  id="objectToMove3" id="ball" data-name="Ball" class="moveable3" style="overflow:visible;" width="23" height="23" xlink:href="824E53C6.png"  transform="matrix(1 0 0 1 1864.5 979.5)">
+		<image  id="objectToMove3" id="ball" data-name="Ball with Diameter : 6mm" class="moveable3" style="overflow:visible;" width="23" height="23" xlink:href="824E53C6.png"  transform="matrix(1 0 0 1 1864.5 979.5)">
 		</image>
 	</g>
 </g>
+
+<g id="tooltipInstruction">
+  <rect x="1250" y="100" width="1000" height="50" rx="10" ry="10" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="0.9"/>
+  <text x="1350" y="130" font-size="30" font-family="Arial, sans-serif" fill="#000">
+    Put mouse cursor on the different objects to get their details
+  </text>
+</g>
+
+
+
 <path class="st1" d="M1388,1171"/>
 <path class="st1" d="M1388,1229"/>
 <path class="st1" d="M1415,1229"/>
@@ -3284,8 +3297,23 @@
 </div>
 
 <div id="resultContainer">
-	<img id="material1Photo" src="co5.2.png" alt="Material 1">
-	<img id="material2Photo" src="co5.1.png" alt="Material 2">
+  <div id="imageWrapper">
+    <div id="imageLabel"><b>Speed: 25 RPM</b></div>
+    <img class="materialPhoto rpm25" src="out1.png" alt="Material 1" data-label="Speed: 25 RPM" data-desc="Sample: 316 L stainless steel (Ra= 28 nm)&#10;Counter body: stainless steel&#10;Load: 10N&#10;Speed: 25 RPM&#10;Time: 30 min">
+    <img class="materialPhoto rpm25" src="out11.png" alt="Material 1" data-label="X-Profile" data-desc="X Profile: ΔX = -2.4584 mm&#10;ΔZ = -23.0632 μm">
+    <img class="materialPhoto rpm25" src="out12.png" alt="Material 1" data-label="Y-Profile" data-desc="Y Profile: ΔX = -2.352 mm&#10;ΔZ = -21.0612 μm">
+
+    <img class="materialPhoto rpm50" src="out2.png" alt="Material 2" data-label="Speed: 50 RPM" data-desc="Sample: 316 L stainless steel (Ra= 16 nm)&#10;Counter body: stainless steel&#10;Load: 10N&#10;Speed: 50 RPM&#10;Time: 30 min">
+    <img class="materialPhoto rpm50" src="out21.png" alt="Material 2" data-label="X-Profile" data-desc="X Profile: ΔX = 2.4008 mm&#10;ΔZ = 33.2978 μm">
+    <img class="materialPhoto rpm50" src="out22.png" alt="Material 2" data-label="Y-Profile"  data-desc="Y Profile: ΔX = 2.1884 mm&#10;ΔZ = 43.0173 μm">
+
+    <div id="imageDescription">Description text will appear here.</div>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
 </div>
 
 			</section>
@@ -3300,6 +3328,9 @@
 		<!-- <div>
 			<center><button style="margin-bottom: 40px; " onclick="window.print()">Print this page</button></center>
 			</div> -->
+		<script>
+			
+		</script>
 
 </body>
 </html>
