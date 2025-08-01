@@ -314,17 +314,35 @@ margin-top: 70px;
 } */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Center the entire result box */
 /* Center the entire result box */
 #resultContainer {
   display: none;
-  margin: 40px auto;
-  max-width: 800px;
+  margin: 20px auto;
+  width: 800px; /* fixed width */
+  height: 600px; /* fixed height */
   text-align: center;
   border: 5px solid rgba(0, 0, 0, 0.974);
   padding: 20px;
   background-color: #f8f8f8;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: -50px;
+  box-sizing: border-box;
 }
 
 /* Image wrapper */
@@ -336,7 +354,7 @@ margin-top: 70px;
 .materialPhoto {
   display: none;
   width: 100%;
-  height: auto;
+  max-height: 350px; /* fixed height */
   object-fit: contain;
   border: 3px solid black;
   border-radius: 6px;
@@ -355,8 +373,9 @@ margin-top: 70px;
   font-size: 16px;
   color: #333;
   line-height: 1.4;
-  min-height: 60px;
-  white-space: pre-line;  /* important to preserve line breaks */
+  height: 90px; /* fixed height */
+  overflow: auto; /* scroll if content overflows */
+  white-space: pre-line;
 }
 
 
@@ -373,6 +392,15 @@ margin-top: 70px;
   font-size: 16px;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -538,3 +566,33 @@ height: 190px;
 .hidden {
   display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #calculationContainer table {
+  border: 2px solid #333;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+#calculationContainer th, #calculationContainer td {
+  padding: 8px 12px;
+}
+
+
+
+
+
+
+

@@ -81,8 +81,11 @@
 	  <h3 class="m " >Start Rotation:</h3>
 	  <button class="button button1 B" id="moveButton7" onclick="selectRPM('25')">25 RPM</button>
       <button class="button button1 B" id="moveButton9" onclick="selectRPM('50')">50 RPM</button>
+	  <button class="button button1 B hidden" id="calculationBtn" onclick="showCalculation()">Calculation</button>
 	</div>
 	  <button class="button button1 hidden B" id="moveButton8" onclick="showResult()">Show Result</button>
+	  
+
 
 		
 
@@ -3271,17 +3274,35 @@
 <path class="st1" d="M1344,1153"/>
 <g>
 	<g>
-		<image  id="objectToMove3" id="ball" data-name="Ball with Diameter : 6mm" class="moveable3" style="overflow:visible;" width="23" height="23" xlink:href="824E53C6.png"  transform="matrix(1 0 0 1 1864.5 979.5)">
+		<image  id="objectToMove3" id="ball" data-name="Ball with Diameter : 6mm" class="moveable3"  style="overflow:visible;" width="23" height="23" xlink:href="824E53C6.png"  transform="matrix(1 0 0 1 1864.5 979.5)">
 		</image>
 	</g>
 </g>
 
 <g id="tooltipInstruction">
-  <rect x="1250" y="100" width="1000" height="50" rx="10" ry="10" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="0.9"/>
-  <text x="1350" y="130" font-size="30" font-family="Arial, sans-serif" fill="#000">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="tooltipBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0e0ff"/>
+      <stop offset="100%" stop-color="#c0c0ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background with rounded corners and stroke -->
+  <rect x="1000" y="80" width="1270" height="80" rx="20" ry="20"
+        fill="url(#tooltipBg)" stroke="#555" stroke-width="3" opacity="0.95"/>
+
+  <!-- Text with improved font and style -->
+  <text x="1100" y="130"
+        font-size="36"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-weight="bold"
+        fill="#222"
+        text-shadow="2px 2px 5px rgba(0,0,0,0.2)">
     Put mouse cursor on the different objects to get their details
   </text>
 </g>
+
 
 
 
@@ -3291,9 +3312,15 @@
 <path class="st1" d="M1415,1171"/>
 <path class="st1" d="M1415,1229"/>
 <path class="st1" d="M1388,1171"/>
+
 </svg>
 
-<h1 id="out" style="margin-left: 8px;">OUTPUT:</h1>
+
+
+
+
+
+<h1 id="out" style="margin: -25px 8px 8px;">OUTPUT</h1>
 </div>
 
 <div id="resultContainer">
@@ -3317,6 +3344,7 @@
 </div>
 
 			</section>
+			<div id="calculationContainer" style="display:none; margin-top:20px;"></div>
 
 		</div>
 	</div>

@@ -587,3 +587,105 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   currentindex = (currentindex - 1 + currentImages.length) % currentImages.length;
   showImage(currentindex);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function showCalculation() {
+  const container = document.getElementById("calculationContainer");
+  container.style.display = "block";
+
+  if (selectedRPM === "25") {
+    // Test 2 Data
+    container.innerHTML = generateTable({
+      testNumber: "1",
+      sample: "316 L stainless steel (Ra= 28 nm)",
+      load: "10N",
+      speed: "25 RPM",
+      time: "30 min",
+      Wv: "1.3×10⁻³",
+      Δm: "1.3×10⁻²",
+      cof: "1.6×10",
+      W: "0.562×10⁻³",
+      dmax: "1.6×10⁻²",
+      SpWr1: "2.23",
+      Wr1: "0.41±0.06",
+      Wr2: "0.001"
+    });
+  } else if (selectedRPM === "50") {
+    // Test 1 Data
+    container.innerHTML = generateTable({
+      testNumber: "2",
+      sample: "316 L stainless steel (Ra= 16 nm)",
+      load: "10N",
+      speed: "50 RPM",
+      time: "30 min",
+      Wv: "1.2×10⁻³",
+      Δm: "1.1×10⁻²",
+      cof: "4.4×10",
+      W: "0.285×10⁻³",
+      dmax: "4.4×10⁻²",
+      SpWr1: "1.33",
+      Wr1: "0.45±0.07",
+      Wr2: "0.009"
+    });
+  } else {
+    container.innerHTML = "<p style='color:red;'>Please select an RPM first.</p>";
+  }
+}
+
+function generateTable(data) {
+  return `
+    <h3 style="text-align:center;">Test ${data.testNumber} - Calculations</h3>
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;" border="1">
+      <tr style="background:#eee;">
+        <th>Parameter</th>
+        <th>Value</th>
+      </tr>
+      <tr><td>Sample</td><td>${data.sample}</td></tr>
+      <tr><td>Load</td><td>${data.load}</td></tr>
+      <tr><td>Speed</td><td>${data.speed}</td></tr>
+      <tr><td>Time</td><td>${data.time}</td></tr>
+      <tr><td>Wear Volume (Wv)</td><td>${data.Wv} mm³</td></tr>
+      <tr><td>Mass Loss (Δm)</td><td>${data.Δm} g</td></tr>
+      <tr><td>Coefficient of Friction (cof)</td><td>${data.cof}</td></tr>
+      <tr><td>Wear Width (W)</td><td>${data.W} mm</td></tr>
+      <tr><td>Max Penetration (dmax)</td><td>${data.dmax} µm</td></tr>
+      <tr><td>Specific Wear Rate (Sp. Wr)</td><td>${data.SpWr1} mm³/N·m</td></tr>
+      <tr><td>Wear Rate (Wr)</td><td>${data.Wr1} / ${data.Wr2}</td></tr>
+    </table>
+    <p style="margin-top:10px; font-style:italic; font-size:14px;">
+      Ra = Sample roughness, Δm = Change in mass, Wr = Wear rate, Wv = Wear volume, dmax = Max penetration depth, cof = Coefficient of friction
+    </p>
+  `;
+}
+
+
+function selectRPM(rpm) {
+  selectedRPM = rpm;
+  document.getElementById("moveButton8").classList.remove("hidden");  // Show Result button
+  document.getElementById("calculationBtn").classList.remove("hidden");  // Show Calculation button
+}
